@@ -30,3 +30,77 @@ C:\Users\1340076\source\repos\PTT InClinic\PTT InClinic\obj\Debug\netcoreapp2.1\
 C:\Users\1340076\source\repos\PTT InClinic\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.dll
 C:\Users\1340076\source\repos\PTT InClinic\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.pdb
 C:\Users\1340076\source\repos\PTT InClinic\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csproj.CopyComplete
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.deps.json
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.runtimeconfig.json
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.runtimeconfig.dev.json
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.dll
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.pdb
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.Views.dll
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.Views.pdb
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csprojAssemblyReference.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csproj.CoreCompileInputs.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorAssemblyInfo.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorAssemblyInfo.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.AssemblyInfoInputs.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.AssemblyInfo.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.TagHelpers.input.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.TagHelpers.output.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorCoreGenerate.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorTargetAssemblyInfo.cache
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorTargetAssemblyInfo.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.Views.pdb
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.dll
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.pdb
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csproj.CopyComplete
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.deps.json
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.runtimeconfig.json
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.runtimeconfig.dev.json
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.dll
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.pdb
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.Views.dll
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\bin\Debug\netcoreapp2.1\PTT InClinic.Views.pdb
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csprojAssemblyReference.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csproj.CoreCompileInputs.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorAssemblyInfo.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorAssemblyInfo.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.AssemblyInfoInputs.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.AssemblyInfo.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.TagHelpers.input.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.TagHelpers.output.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorCoreGenerate.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorTargetAssemblyInfo.cache
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.RazorTargetAssemblyInfo.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.Views.pdb
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.dll
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.pdb
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\PTT InClinic.csproj.CopyComplete
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Create.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Delete.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Details.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Edit.g.cshtml.cs
+J:\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Index.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Create.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Delete.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Details.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Edit.g.cshtml.cs
+C:\Users\1512124\Desktop\PTT cLINIC\Clinical-Managment-System\PTT InClinic\obj\Debug\netcoreapp2.1\Razor\Views\Patients\Index.g.cshtml.cs
