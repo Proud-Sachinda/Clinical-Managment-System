@@ -46,6 +46,10 @@ namespace Clinic_System.Controllers
         // GET: Appointments/Create
         public IActionResult Create()
         {
+
+            PopulatePatientsDropDownList();
+            PopulateAdministratorsDropDownList();
+            PopulatePractitionersDropDownList();
             return View();
         }
 
@@ -148,6 +152,33 @@ namespace Clinic_System.Controllers
         private bool AppointmentExists(int id)
         {
             return _context.Appointments.Any(e => e.AppointmentID == id);
+        }
+
+
+
+
+        private void PopulatePatientsDropDownList(object selectedPatient = null)
+        {
+            var PatientsQuery = from d in _context.Patients
+                                   orderby d.PatientFirstname
+                                   select d;
+            ViewBag.PatientID = new SelectList(PatientsQuery.AsNoTracking(), "PatientID", "PatientFirstname", selectedPatient);
+        }
+
+        private void PopulateAdministratorsDropDownList(object selectedAdministrator = null)
+        {
+            var AdministratorsQuery = from d in _context.Administrators
+                                orderby d.Username
+                                      select d;
+            ViewBag.AdministratorID = new SelectList(AdministratorsQuery.AsNoTracking(), "AdministratorID", "Username", selectedAdministrator);
+        }
+
+        private void PopulatePractitionersDropDownList(object selectedPractitioner = null)
+        {
+            var PractitionersQuery = from d in _context.Practitioners
+                                orderby d.Username
+                                     select d;
+            ViewBag.PractitionerID = new SelectList(PractitionersQuery.AsNoTracking(), "PractitionerID", "Username", selectedPractitioner);
         }
     }
 }
