@@ -10,22 +10,22 @@ using Clinic_System.Models;
 
 namespace Clinic_System.Controllers
 {
-    public class AppointmentsController : Controller
+    public class ProceduresController : Controller
     {
         private readonly ClinicContext _context;
 
-        public AppointmentsController(ClinicContext context)
+        public ProceduresController(ClinicContext context)
         {
             _context = context;
         }
 
-        // GET: Appointments
+        // GET: Procedures
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Appointments.ToListAsync());
+            return View(await _context.Procedure.ToListAsync());
         }
 
-        // GET: Appointments/Details/5
+        // GET: Procedures/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,45 +33,42 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var appointment = await _context.Appointments
-                .FirstOrDefaultAsync(m => m.AppointmentID == id);
-            if (appointment == null)
+            var procedure = await _context.Procedure
+                .FirstOrDefaultAsync(m => m.ProcedureID == id);
+            if (procedure == null)
             {
                 return NotFound();
             }
 
-            return View(appointment);
+            return View(procedure);
         }
 
-        // GET: Appointments/Create
-
-
+        // GET: Procedures/Create
         public IActionResult Create()
         {
 
             PopulatePatientsDropDownList();
-            PopulateAdministratorsDropDownList();
             PopulatePractitionersDropDownList();
             return View();
         }
 
-        // POST: Appointments/Create
+        // POST: Procedures/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AppointmentID,PatientID,AdministratorID,PractitionerID,AppointmentDate,AppointmentDescr")] Appointment appointment)
+        public async Task<IActionResult> Create([Bind("ProcedureID,PractitionerID,PatientID,Medication,Complication,ProcedureUsed")] Procedure procedure)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(appointment);
+                _context.Add(procedure);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(appointment);
+            return View(procedure);
         }
 
-        // GET: Appointments/Edit/5
+        // GET: Procedures/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,22 +76,22 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var appointment = await _context.Appointments.FindAsync(id);
-            if (appointment == null)
+            var procedure = await _context.Procedure.FindAsync(id);
+            if (procedure == null)
             {
                 return NotFound();
             }
-            return View(appointment);
+            return View(procedure);
         }
 
-        // POST: Appointments/Edit/5
+        // POST: Procedures/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AppointmentID,PatientID,AdministratorID,PractitionerID,AppointmentDate,AppointmentDescr")] Appointment appointment)
+        public async Task<IActionResult> Edit(int id, [Bind("ProcedureID,PractitionerID,PatientID,Medication,Complication,ProcedureUsed")] Procedure procedure)
         {
-            if (id != appointment.AppointmentID)
+            if (id != procedure.ProcedureID)
             {
                 return NotFound();
             }
@@ -103,12 +100,12 @@ namespace Clinic_System.Controllers
             {
                 try
                 {
-                    _context.Update(appointment);
+                    _context.Update(procedure);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AppointmentExists(appointment.AppointmentID))
+                    if (!ProcedureExists(procedure.ProcedureID))
                     {
                         return NotFound();
                     }
@@ -119,10 +116,10 @@ namespace Clinic_System.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(appointment);
+            return View(procedure);
         }
 
-        // GET: Appointments/Delete/5
+        // GET: Procedures/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,30 +127,30 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var appointment = await _context.Appointments
-                .FirstOrDefaultAsync(m => m.AppointmentID == id);
-            if (appointment == null)
+            var procedure = await _context.Procedure
+                .FirstOrDefaultAsync(m => m.ProcedureID == id);
+            if (procedure == null)
             {
                 return NotFound();
             }
 
-            return View(appointment);
+            return View(procedure);
         }
 
-        // POST: Appointments/Delete/5
+        // POST: Procedures/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var appointment = await _context.Appointments.FindAsync(id);
-            _context.Appointments.Remove(appointment);
+            var procedure = await _context.Procedure.FindAsync(id);
+            _context.Procedure.Remove(procedure);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AppointmentExists(int id)
+        private bool ProcedureExists(int id)
         {
-            return _context.Appointments.Any(e => e.AppointmentID == id);
+            return _context.Procedure.Any(e => e.ProcedureID == id);
         }
 
         private void PopulatePatientsDropDownList(object selectedPatient = null)
@@ -162,14 +159,6 @@ namespace Clinic_System.Controllers
                                 orderby d.PatientFirstname
                                 select d;
             ViewBag.PatientID = new SelectList(PatientsQuery.AsNoTracking(), "PatientID", "PatientFirstname", selectedPatient);
-        }
-
-        private void PopulateAdministratorsDropDownList(object selectedAdministrator = null)
-        {
-            var AdministratorsQuery = from d in _context.Administrators
-                                      orderby d.Username
-                                      select d;
-            ViewBag.AdministratorID = new SelectList(AdministratorsQuery.AsNoTracking(), "AdministratorID", "Username", selectedAdministrator);
         }
 
         private void PopulatePractitionersDropDownList(object selectedPractitioner = null)

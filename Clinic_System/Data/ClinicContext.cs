@@ -27,5 +27,7 @@ namespace Clinic_System.Data
             //modelBuilder.Entity<Procedure>().ToTable("Procedure");
             modelBuilder.Entity<Administrator>().ToTable("Administrator");
         }
+
+        public DbSet<Clinic_System.Models.Procedure> Procedure { get; set; }
     }
 }
