@@ -20,9 +20,52 @@ namespace Clinic_System.Controllers
         }
 
         // GET: Patients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString,
+                                               string currentFilter, int? page)
         {
-            return View(await _context.Patients.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["LastnameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "lastname_desc" : "";
+            ViewData["UsernameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "username_desc" : "";
+
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            var patients = from p in _context.Patients
+                           select p;
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                patients = patients.Where(p => p.PatientLastname.Contains(searchString)
+                    || p.PatientFirstname.Contains(searchString)
+                    || p.Username.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    patients = patients.OrderByDescending(p => p.PatientFirstname);
+                    break;
+                case "lastname_desc":
+                    patients = patients.OrderByDescending(p => p.PatientLastname);
+                    break;
+                case "username_desc":
+                    patients = patients.OrderByDescending(p => p.Username);
+                    break;
+                default:
+                    patients = patients.OrderBy(p => p.PatientLastname);
+                    break;
+            }
+            int pageSize = 3;
+            return View(await PaginatedList<Patient>.CreateAsync(patients.AsNoTracking(),page ?? 1, pageSize));
         }
 
         // GET: Patients/Details/5
@@ -34,6 +77,7 @@ namespace Clinic_System.Controllers
             }
 
             var patient = await _context.Patients
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.PatientID == id);
             if (patient == null)
             {

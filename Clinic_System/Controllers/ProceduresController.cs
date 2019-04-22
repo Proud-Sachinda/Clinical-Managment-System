@@ -22,7 +22,7 @@ namespace Clinic_System.Controllers
         // GET: Procedures
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Procedure.ToListAsync());
+            return View(await _context.Procedures.ToListAsync());
         }
 
         // GET: Procedures/Details/5
@@ -33,7 +33,7 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var procedure = await _context.Procedure
+            var procedure = await _context.Procedures
                 .FirstOrDefaultAsync(m => m.ProcedureID == id);
             if (procedure == null)
             {
@@ -46,7 +46,6 @@ namespace Clinic_System.Controllers
         // GET: Procedures/Create
         public IActionResult Create()
         {
-
             PopulatePatientsDropDownList();
             PopulatePractitionersDropDownList();
             return View();
@@ -57,7 +56,7 @@ namespace Clinic_System.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProcedureID,PractitionerID,PatientID,Medication,Complication,ProcedureUsed")] Procedure procedure)
+        public async Task<IActionResult> Create([Bind("ProcedureID,PatientID,PractitionerID,ProcedureDate,Medication,followupDate,Complication,ProcedureUsed")] Procedure procedure)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +75,7 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var procedure = await _context.Procedure.FindAsync(id);
+            var procedure = await _context.Procedures.FindAsync(id);
             if (procedure == null)
             {
                 return NotFound();
@@ -89,7 +88,7 @@ namespace Clinic_System.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProcedureID,PractitionerID,PatientID,Medication,Complication,ProcedureUsed")] Procedure procedure)
+        public async Task<IActionResult> Edit(int id, [Bind("ProcedureID,PatientID,PractitionerID,ProcedureDate,Medication,followupDate,Complication,ProcedureUsed")] Procedure procedure)
         {
             if (id != procedure.ProcedureID)
             {
@@ -127,7 +126,7 @@ namespace Clinic_System.Controllers
                 return NotFound();
             }
 
-            var procedure = await _context.Procedure
+            var procedure = await _context.Procedures
                 .FirstOrDefaultAsync(m => m.ProcedureID == id);
             if (procedure == null)
             {
@@ -142,18 +141,18 @@ namespace Clinic_System.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var procedure = await _context.Procedure.FindAsync(id);
-            _context.Procedure.Remove(procedure);
+            var procedure = await _context.Procedures.FindAsync(id);
+            _context.Procedures.Remove(procedure);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProcedureExists(int id)
         {
-            return _context.Procedure.Any(e => e.ProcedureID == id);
+            return _context.Procedures.Any(e => e.ProcedureID == id);
         }
 
-        private void PopulatePatientsDropDownList(object selectedPatient = null)
+        public void PopulatePatientsDropDownList(object selectedPatient = null)
         {
             var PatientsQuery = from d in _context.Patients
                                 orderby d.PatientFirstname
@@ -161,12 +160,13 @@ namespace Clinic_System.Controllers
             ViewBag.PatientID = new SelectList(PatientsQuery.AsNoTracking(), "PatientID", "PatientFirstname", selectedPatient);
         }
 
-        private void PopulatePractitionersDropDownList(object selectedPractitioner = null)
+        public void PopulatePractitionersDropDownList(object selectedPractitioner = null)
         {
             var PractitionersQuery = from d in _context.Practitioners
                                      orderby d.Username
                                      select d;
             ViewBag.PractitionerID = new SelectList(PractitionersQuery.AsNoTracking(), "PractitionerID", "Username", selectedPractitioner);
         }
+
     }
 }

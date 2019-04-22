@@ -3,29 +3,28 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
+<h2>Current Procedure(s)</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">New Procedure</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PractitionerID)
+                Procedure Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PatientID)
+                Medication
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Medication)
+                Follow up Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Complication)
+                Complication
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProcedureUsed)
+                Procedure Used
             </th>
             <th></th>
         </tr>
@@ -34,13 +33,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PractitionerID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PatientID)
+                @Html.DisplayFor(modelItem => item.ProcedureDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Medication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.followupDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Complication)

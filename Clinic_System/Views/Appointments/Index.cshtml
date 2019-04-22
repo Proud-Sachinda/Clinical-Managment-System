@@ -1,22 +1,23 @@
 ﻿@model IEnumerable<Clinic_System.Models.Appointment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Appointments";
 }
 
-<h2>Index</h2>
+<h2>Welcome to our Clinic online Booking system</h2>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Book an Appointment</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AppointmentDate)
+                Appointment Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AppointmentDescr)
+                Appointment Description
             </th>
             <th></th>
         </tr>

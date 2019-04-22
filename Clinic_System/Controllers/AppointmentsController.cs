@@ -19,6 +19,8 @@ namespace Clinic_System.Controllers
             _context = context;
         }
 
+  
+
         // GET: Appointments
         public async Task<IActionResult> Index()
         {
@@ -34,6 +36,7 @@ namespace Clinic_System.Controllers
             }
 
             var appointment = await _context.Appointments
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.AppointmentID == id);
             if (appointment == null)
             {
@@ -44,13 +47,9 @@ namespace Clinic_System.Controllers
         }
 
         // GET: Appointments/Create
-
-
         public IActionResult Create()
         {
-
             PopulatePatientsDropDownList();
-            PopulateAdministratorsDropDownList();
             PopulatePractitionersDropDownList();
             return View();
         }
@@ -60,8 +59,14 @@ namespace Clinic_System.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AppointmentID,PatientID,AdministratorID,PractitionerID,AppointmentDate,AppointmentDescr")] Appointment appointment)
+        public async Task<IActionResult> Create([Bind("AppointmentID,PatientID,PractitionerID,AppointmentDate,AppointmentDescr")] Appointment appointment)
         {
+
+            if(AppointmentDateExist(appointment.AppointmentDate))
+            {
+                ViewBag.Error = "The slot is already booked";
+                return View();
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(appointment);
@@ -156,7 +161,12 @@ namespace Clinic_System.Controllers
             return _context.Appointments.Any(e => e.AppointmentID == id);
         }
 
-        private void PopulatePatientsDropDownList(object selectedPatient = null)
+        private bool AppointmentDateExist(DateTime date_time)
+        {
+            return _context.Appointments.Any(d => d.AppointmentDate == date_time);
+        }
+
+        public void PopulatePatientsDropDownList(object selectedPatient = null)
         {
             var PatientsQuery = from d in _context.Patients
                                 orderby d.PatientFirstname
@@ -164,15 +174,7 @@ namespace Clinic_System.Controllers
             ViewBag.PatientID = new SelectList(PatientsQuery.AsNoTracking(), "PatientID", "PatientFirstname", selectedPatient);
         }
 
-        private void PopulateAdministratorsDropDownList(object selectedAdministrator = null)
-        {
-            var AdministratorsQuery = from d in _context.Administrators
-                                      orderby d.Username
-                                      select d;
-            ViewBag.AdministratorID = new SelectList(AdministratorsQuery.AsNoTracking(), "AdministratorID", "Username", selectedAdministrator);
-        }
-
-        private void PopulatePractitionersDropDownList(object selectedPractitioner = null)
+        public void PopulatePractitionersDropDownList(object selectedPractitioner = null)
         {
             var PractitionersQuery = from d in _context.Practitioners
                                      orderby d.Username

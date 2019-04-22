@@ -14,19 +14,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProcedureID" />
             <div class="form-group">
-                <label asp-for="PractitionerID" class="control-label"></label>
-                <input asp-for="PractitionerID" class="form-control" />
-                <span asp-validation-for="PractitionerID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="PatientID" class="control-label"></label>
                 <input asp-for="PatientID" class="form-control" />
                 <span asp-validation-for="PatientID" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="PractitionerID" class="control-label"></label>
+                <input asp-for="PractitionerID" class="form-control" />
+                <span asp-validation-for="PractitionerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcedureDate" class="control-label"></label>
+                <input asp-for="ProcedureDate" class="form-control" />
+                <span asp-validation-for="ProcedureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Medication" class="control-label"></label>
                 <input asp-for="Medication" class="form-control" />
                 <span asp-validation-for="Medication" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="followupDate" class="control-label"></label>
+                <input asp-for="followupDate" class="form-control" />
+                <span asp-validation-for="followupDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Complication" class="control-label"></label>

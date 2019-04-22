@@ -4,36 +4,44 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Procedure</h2>
 
-<h4>Procedure</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="PractitionerID" class="control-label"></label>
-                <input asp-for="PractitionerID" class="form-control" />
-                <span asp-validation-for="PractitionerID" class="text-danger"></span>
+                <label asp-for="PatientID" class="control-label">Patient Name</label>
+                <select asp-for="PatientID" class="form-control" asp-items="ViewBag.PatientID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="PatientID" class="control-label"></label>
-                <input asp-for="PatientID" class="form-control" />
-                <span asp-validation-for="PatientID" class="text-danger"></span>
+                <label asp-for="PractitionerID" class="control-label">Practitioner Name</label>
+                <select asp-for="PractitionerID" class="form-control" asp-items="ViewBag.PractitionerID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Medication" class="control-label"></label>
+                <label asp-for="ProcedureDate" class="control-label">Procedure Date</label>
+                <input asp-for="ProcedureDate" class="form-control" />
+                <span asp-validation-for="ProcedureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medication" class="control-label">Medication</label>
                 <input asp-for="Medication" class="form-control" />
                 <span asp-validation-for="Medication" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Complication" class="control-label"></label>
+                <label asp-for="followupDate" class="control-label">Follow up Date</label>
+                <input asp-for="followupDate" class="form-control" />
+                <span asp-validation-for="followupDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complication" class="control-label">Complication</label>
                 <input asp-for="Complication" class="form-control" />
                 <span asp-validation-for="Complication" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProcedureUsed" class="control-label"></label>
+                <label asp-for="ProcedureUsed" class="control-label">Procedure used</label>
                 <input asp-for="ProcedureUsed" class="form-control" />
                 <span asp-validation-for="ProcedureUsed" class="text-danger"></span>
             </div>
