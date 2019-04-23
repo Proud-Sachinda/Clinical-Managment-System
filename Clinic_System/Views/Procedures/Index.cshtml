@@ -1,0 +1,118 @@
+﻿
+@model PaginatedList<Clinic_System.Models.Procedure>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Current Procedure done (Mainly for research purposes)</h2>
+<hr style="background-color:brown; border-width:thick; border-color:darkmagenta" />
+<img src="~/images/proc2.jpg" alt="mypic" style="width:1150px;height:500px;" />
+
+
+<div style="  background-color: darkmagenta;
+  border: none;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; margin-top:10px; margin-bottom: 10px">
+    <p>
+        <a asp-action="Create">New Procedure</a>
+    </p>
+</div>
+
+<div style="background-color:lightgrey;">
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" />
+                <a asp-action="Index">Back to Full List</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Procedure Date
+                </th>
+                <th>
+
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"
+                       @Html.DisplayNameFor(model=>model.Medication)>Medication</a>
+
+                </th>
+                <th>
+                    Follow up Date
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["LastnameSortParm"]"
+                       @Html.DisplayNameFor(model=>model.Complication)>Complication</a>
+
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["UsernameSortParm"]"
+                       @Html.DisplayNameFor(model=>model.ProcedureUsed)> Procedure Used</a>
+
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProcedureDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Medication)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.followupDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Complication)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProcedureUsed)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProcedureID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProcedureID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProcedureID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-page="@(Model.PageIndex - 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-page="@(Model.PageIndex + 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @nextDisabled">
+        Next
+    </a>
